@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BinaryBudget - RetailerProfile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="../static/assets/img/apple-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="../static/assets/img/favicon.ico">
+
+  <link rel="stylesheet" href="../static/assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/assets/css/templatemo.css">
+  <!--<link rel="stylesheet" href="../static/assets/css/custom.css"> -->
+
+  <!-- Load fonts style after rendering the layout styles -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+  <link rel="stylesheet" href="../static/assets/css/fontawesome.min.css">
+
+  <!-- Load map styles -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
+  <!--
+
+TemplateMo 559 Zay Shop
+
+https://templatemo.com/tm-559-zay-shop
+
+-->
+</head>
+
+<body>
+  <!-- Start Top Nav -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+    <div class="container text-light">
+      <div class="w-100 d-flex justify-content-between">
+        <div>
+          <i class="fa fa-envelope mx-2"></i>
+          <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+          <i class="fa fa-phone mx-2"></i>
+          <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+          <a class="navbar-sm-brand text-light text-decoration-none" href="retailer_login"><strong>Retailer Login</strong></a>
+        </div>
+        <div>
+          <a class="text-light" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+          <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+          <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+          <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Close Top Nav -->
+
+
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <a class="navbar-brand text-success logo h1 align-self-center" href="retailer_index">
+        BinaryBudget
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+        <div class="flex-fill">
+          <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="customer_index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Retailer</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="membership">Membership</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="coupon">Coupon</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="navbar align-self-center d-flex">
+
+          <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{msg}}</span>
+          <div class="dropdown">
+
+            <a class="" href="#" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+
+              <i class="fa fa-fw fa-user text-dark mr-3"></i>
+               <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+            </a>
+
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="/customer_profile">Profile</a></li>
+              <li><a class="dropdown-item" href="/customer_logout">Log Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+  <!-- Close Header -->
+
+  <!-- Modal -->
+  <div class="modal fade bg-white" id="templatemo_search" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="w-100 pt-1 mb-5 text-right">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form action="" method="get" class="modal-content modal-body border-0 p-0">
+        <div class="input-group mb-2">
+          <input type="text" class="form-control" id="inputModalSearch" name="q" placeholder="Search ...">
+          <button type="submit" class="input-group-text bg-success text-light">
+            <i class="fa fa-fw fa-search text-white"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- Start Content Page -->
+  <div class="container-fluid bg-light py-5">
+    <div class="col-md-6 m-auto text-center">
+      <h1 class="h1">Update Profile</h1>
+    </div>
+  </div>
+{% for r in row %}
+  <div class="container">
+
+  	<hr>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="static/assets/img/customerdps/{{r[5]}}" class="avatar img-circle" alt="avatar" style="height:100px;width:100px">
+
+
+
+        </div>
+      </div>
+
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+        <h4>Personal info</h4>
+        <hr />
+
+        <form class="form-horizontal" role="form" action="/updatecustomer_profile" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Name :</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{r[0]}}" name="name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Mobile :</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{r[1]}}" minlength=10 name="mobile">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Location :</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value={{r[2]}}"" name="location">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Date of Birth :</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="date" value="{{r[3]}}" name="dob">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="email" value="" name="email" disabled>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label">Gender:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="text" value="{{r[4]}}" required name="gender">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Upload Photo:</label>
+            <div class="col-md-8">
+                <input type="file" class="form-control" name="image" value="{{r[5]}}">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" minlength=8 value="{{r[6]}}" name="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="" minlength=8 >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="submit" class="btn btn-success" value="Update Profile">
+              <span></span>
+              <input type="reset" class="btn btn-success" value="Cancel">
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+{% endfor %}
+<hr />
+<footer class="bg-dark" id="tempaltemo_footer">
+  <div class="container">
+    <div class="row text-light mb-4">
+      <div class="col-12 mb-3">
+        <div class="w-100 my-3 border-top border-light"></div>
+      </div>
+      <div class="col-auto me-auto">
+        <ul class="list-inline text-left footer-icons">
+          <li class="list-inline-item border border-light rounded-circle text-center">
+            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+          </li>
+          <li class="list-inline-item border border-light rounded-circle text-center">
+            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+          </li>
+          <li class="list-inline-item border border-light rounded-circle text-center">
+            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+          </li>
+          <li class="list-inline-item border border-light rounded-circle text-center">
+            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+          </li>
+        </ul>
+      </div>
+      <div class="col-auto">
+        <label class="sr-only" for="subscribeEmail">Email address</label>
+        <div class="input-group mb-2">
+          <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+          <div class="input-group-text btn-success text-light">Subscribe</div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+  </body>
+
+  </html>
